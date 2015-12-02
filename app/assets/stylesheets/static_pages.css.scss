@@ -1,0 +1,72 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+img {
+  width: 100%;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+#description {
+  margin: 0;
+  padding: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#description p {
+  text-align: center;
+  margin: 20px auto;
+}
+
+footer {
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 55px 50px;
+  margin-top: 80px;
+  bottom: 0;
+  color: #fff;
+}
+
+div.jumbotron.hero {
+  color: #fff;
+  text-align: center;
+  background-size: cover;
+  padding: 150px 0;
+}
+
+.hero-first {
+  background: image-url('bike4.jpg') bottom right;
+}
+
+.hero-second {
+  background: image-url('bike2.jpg') center center;
+}
+
+.hero-about {
+  background: image-url('bike5.jpg') center center;
+  min-height: 540px;
+}
+
+h1.hero-title {
+  text-shadow: 0 2px 2px rgba(0,0,0,0.3);
+  color: #fff;
+  font-weight: 500;
+}
+
+p.hero-subtitle {
+  max-width: 600px;
+  margin: 25px auto;
+  padding: 10px 15px;
+  background-color: rgba(0,0,0,0.1);
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.7);
+  font-weight: 500;
+}
