@@ -2,44 +2,148 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$primary-color: #fff;
+$secondary-color: #292c2f;
+$text-color: rgba(0, 0, 0, 0.85);
+$max-width: 600px;
+
+@mixin fake-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@mixin darken-anchor {
+  color:  darken( $primary-color, 5% );
+  text-decoration: none;
+}
+
 img {
   width: 100%;
 }
 
 .navbar {
   margin-bottom: 0;
+  background: $primary-color;
 }
 
-#description {
-  margin: 0;
-  padding: 10px;
-  max-width: 600px;
+.module-text {
+  padding: 14% 0;
+  max-width: $max-width;
   margin: 0 auto;
-}
-
-#description p {
-  text-align: center;
-  margin: 20px auto;
+  color: $text-color;
+  
+  p {
+    text-align: center;
+    margin: 80px auto;
+    color: $text-color;
+  }
 }
 
 footer {
-  background-color: #292c2f;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  background-color: $secondary-color;
   box-sizing: border-box;
   width: 100%;
   text-align: left;
   font: bold 16px sans-serif;
-  padding: 55px 50px;
-  margin-top: 80px;
-  bottom: 0;
-  color: #fff;
+  padding: 50px 50px;
+  color: $primary-color;
+  margin: 0 auto;
+  height: 140px;
+  
+  .social-buttons {
+    display: block;
+    padding-right: 30px;
+    float: right;
+    
+    a:hover {
+      @include darken-anchor;
+    }
+  }
+
+  #copyright {
+    padding: 30px;
+    text-align: center;
+    clear: both;
+  }
 }
 
-div.jumbotron.hero {
-  color: #fff;
-  text-align: center;
+ul.footer-navbar {
+  margin: 0;
+  
+  li {
+    display: inline-block;
+    float: left;
+    text-decoration: none;
+    margin-right: 1.2em;
+  }
+
+  a {
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #9d9d9d;
+
+    &:hover {
+      @include darken-anchor;
+    }
+  }
+}
+ 
+@media screen and (max-width: 480px) {
+  footer {
+    min-height: 200px;
+
+    .social-buttons {
+      margin: 0 auto;
+      padding: 20px 10px 20px 0;
+      clear: both;
+      float: none;
+      text-align: center;
+    }
+  }
+}
+
+/***************************************************/
+/*                 Jumbotron style                 */
+/***************************************************/                 
+
+div.hero {
+  color: $primary-color;
   background-size: cover;
-  padding: 150px 0;
+  margin-bottom: 0;
+  padding: 16% 0;
+  text-align: center;
+  min-height: 450px;
+  
+  h1 {
+    text-shadow: 0 2px 2px rgba(0,0,0,0.3);
+    color: $primary-color;
+    font-weight: 600;
+    letter-spacing: .01em;
+  }
+
+  p {
+    max-width: $max-width;
+    margin: 25px auto;
+    padding: 10px 15px;
+    color: $primary-color;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.7);
+    font-weight: 500;
+  }
+
+  a.btn {
+    border: 0;
+    border-radius: 0;
+    background: $primary-color;
+    font-size: 0.9em;
+    color: $text-color;
+    letter-spacing: 0.02em;
+    text-shadow: none;
+    
+    &:hover {
+      @include darken-anchor;
+      color: darken( $primary-color, 60% );
+    }
+  }
 }
 
 .hero-first {
@@ -52,21 +156,7 @@ div.jumbotron.hero {
 
 .hero-about {
   background: image-url('bike5.jpg') center center;
-  min-height: 540px;
+  height: 540px;
 }
 
-h1.hero-title {
-  text-shadow: 0 2px 2px rgba(0,0,0,0.3);
-  color: #fff;
-  font-weight: 500;
-}
 
-p.hero-subtitle {
-  max-width: 600px;
-  margin: 25px auto;
-  padding: 10px 15px;
-  background-color: rgba(0,0,0,0.1);
-  color: #fff;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.7);
-  font-weight: 500;
-}
