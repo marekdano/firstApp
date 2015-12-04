@@ -7,18 +7,31 @@ $secondary-color: #292c2f;
 $text-color: rgba(0, 0, 0, 0.85);
 $max-width: 600px;
 
-@mixin fake-cell {
-  display: table-cell;
-  vertical-align: middle;
-}
-
 @mixin darken-anchor {
   color:  darken( $primary-color, 5% );
   text-decoration: none;
 }
 
-img {
-  width: 100%;
+@mixin text-shadow-style($top, $right, $bottom, $left, $color, $opacity) {
+  text-shadow: $top $right $bottom $left rgba($color, $opacity);
+  // text-shadow: 0 2px 2px 0 rgba(#000 ,0.3);
+} 
+
+@mixin font-weight-style($num) {
+  font-weight: $num;
+}
+
+@mixin bgd-image($image, $vertical, $horizontal, $top, $right, $bottom, $left) {
+  background: $image $vertical $horizontal;
+  padding: $top $right $bottom $left;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .navbar {
@@ -26,10 +39,10 @@ img {
   background: $primary-color;
 }
 
-.module-text {
+.box-text {
+  @extend .center;
   padding: 14% 0;
   max-width: $max-width;
-  margin: 0 auto;
   color: $text-color;
   
   p {
@@ -39,16 +52,18 @@ img {
   }
 }
 
+/*****************************************************/
+/*                   Footer style                    */
+/*****************************************************/ 
+
 footer {
-  background-color: $secondary-color;
-  box-sizing: border-box;
+  @extend .center;
   width: 100%;
-  text-align: left;
+  background-color: $secondary-color;
   font: bold 16px sans-serif;
   padding: 50px 50px;
   color: $primary-color;
-  margin: 0 auto;
-  height: 140px;
+  height: 160px;
   
   .social-buttons {
     display: block;
@@ -61,14 +76,16 @@ footer {
   }
 
   #copyright {
-    padding: 30px;
+    @include font-weight-style(500);
+    letter-spacing: .05em;
+    padding-top: 40px;
     text-align: center;
     clear: both;
   }
 }
 
 ul.footer-navbar {
-  margin: 0;
+  @extend .center;
   
   li {
     display: inline-block;
@@ -78,7 +95,7 @@ ul.footer-navbar {
   }
 
   a {
-    font-weight: 400;
+    @include font-weight-style(500);
     text-transform: uppercase;
     color: #9d9d9d;
 
@@ -93,31 +110,29 @@ ul.footer-navbar {
     min-height: 200px;
 
     .social-buttons {
-      margin: 0 auto;
+      margin: 0 auto; 
       padding: 20px 10px 20px 0;
-      clear: both;
       float: none;
+      clear: both;
       text-align: center;
     }
   }
 }
 
-/***************************************************/
-/*                 Jumbotron style                 */
-/***************************************************/                 
+/*****************************************************/
+/*                  Jumbotron style                  */
+/*****************************************************/                 
 
 div.hero {
   color: $primary-color;
   background-size: cover;
   margin-bottom: 0;
-  padding: 16% 0;
   text-align: center;
-  min-height: 450px;
   
   h1 {
-    text-shadow: 0 2px 2px rgba(0,0,0,0.3);
+    @include text-shadow-style(0, 2px, 2px, 0, #000, 0.3);
     color: $primary-color;
-    font-weight: 600;
+    @include font-weight-style(600);
     letter-spacing: .01em;
   }
 
@@ -126,8 +141,8 @@ div.hero {
     margin: 25px auto;
     padding: 10px 15px;
     color: $primary-color;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.7);
-    font-weight: 500;
+    @include text-shadow-style(0, 1px, 1px, 0, #000, 0.7);
+    @include font-weight-style(500);
   }
 
   a.btn {
@@ -137,7 +152,6 @@ div.hero {
     font-size: 0.9em;
     color: $text-color;
     letter-spacing: 0.02em;
-    text-shadow: none;
     
     &:hover {
       @include darken-anchor;
@@ -147,16 +161,53 @@ div.hero {
 }
 
 .hero-first {
-  background: image-url('bike4.jpg') bottom right;
+  @include bgd-image(image-url('bike4.jpg'), bottom, right, 16%, 0, 16%, 0);
 }
 
 .hero-second {
-  background: image-url('bike2.jpg') center center;
+  @include bgd-image(image-url('bike2.jpg'), center, center, 16%, 0, 16%, 0);
 }
 
 .hero-about {
-  background: image-url('bike5.jpg') center center;
-  height: 540px;
+  @include bgd-image(image-url('bike5.jpg'), center, center, 24%, 0, 24%, 0);
+}
+
+
+/***************************************************/
+/*                  About page                     */
+/***************************************************/
+
+.about-content {
+
+  h3 {
+    text-align: center;
+    line-height: 1.3em;
+    padding: 50px 0;
+  } 
+
+  p:last-child {
+    padding-bottom: 50px;
+  }
+}
+
+/***************************************************/
+/*                Contact page                     */
+/***************************************************/
+
+.contact-section {
+  padding-top: 10%;
+  padding-bottom: 10%;
+
+  h4 {
+    line-height: 30px;
+    padding-top: 40px;
+    font-size: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5em;
+  }
 }
 
 
