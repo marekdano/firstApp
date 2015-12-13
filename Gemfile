@@ -42,8 +42,9 @@ group :development, :test do
 end
 
 group :production do
+  # Gem for deploying the app on Heroku  
   gem 'rails_12factor'
-  #Use postgreSQL as the database on the production environment
+  # Use postgreSQL as the database on the production environment
   gem 'pg'
 end
 
