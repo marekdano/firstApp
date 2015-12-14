@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="thumbnail">
+        <img class="img-responsive" src=<%= @product.image_url %> />
+        <%= image_tag(@product.image_url, class: "img-responsive") %>
+        <div class="caption-full">
+          <h4 class="pull-right">Out of the stock</h4>
+          <h4><%= @product.name %></h4>
+          <p><%= @product.description %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @product.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
