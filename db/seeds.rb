@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Product.create(name: "Bike", description: "Quisque molestie urna id nisl mollis, sit amet feugiat quam consectetur. Nullam sit amet mauris mauris. Curabitur aliquam suscipit urna, ut elementum massa tempus vitae. Integer commodo justo non sem scelerisque, quis elementum ipsum feugiat. Aliquam erat volutpat.", image_url: "bike2.jpg", price: "45.99");

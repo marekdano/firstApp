@@ -10,7 +10,7 @@
       <div class="thumbnail">
         <%= image_tag(@product.image_url, class: "img-responsive") %>
         <div class="caption details-text">
-          <h3 class="pull-right">&euro; 10.99</h3>
+          <h3 class="pull-right"><%= number_to_currency @product.price, unit: "€ " %></h3>
           <h2><%= @product.name %></h2>
           <h5><%= @product.description %></h5>
         </div>
