@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   resources :products
 
+  resources :orders, only: [:index, :show, :create, :destroy]
+
   get 'home/about'
 
   get 'home/contact'
-
-  get 'home/index'
 
   root 'home#index'
 
