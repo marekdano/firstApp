@@ -119,6 +119,18 @@ ul.footer-navbar {
   }
 }
 
+
+/*****************************************************/
+/*                 Carousel style                    */
+/*****************************************************/ 
+
+@media screen and (min-width: 480px) {
+  .carousel-caption {
+    top: 40%;
+  }
+}
+
+
 /*****************************************************/
 /*                  Jumbotron style                  */
 /*****************************************************/                 
@@ -149,7 +161,7 @@ div.hero {
     border: 0;
     border-radius: 0;
     background: $primary-color;
-    font-size: 0.9em;
+    font-size: 18px;
     color: $text-color;
     letter-spacing: 0.02em;
     
