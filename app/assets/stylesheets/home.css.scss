@@ -175,17 +175,7 @@ div.hero {
   }
 }
 
-.hero-first {
-  @include bgd-image(image-url('bike4.jpg'), bottom, right, 16%, 0, 16%, 0);
-}
 
-.hero-second {
-  @include bgd-image(image-url('bike2.jpg'), center, center, 16%, 0, 16%, 0);
-}
-
-.hero-about {
-  @include bgd-image(image-url('bike5.jpg'), center, center, 24%, 0, 24%, 0);
-}
 
 
 /***************************************************/
