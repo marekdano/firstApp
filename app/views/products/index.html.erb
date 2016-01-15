@@ -1,5 +1,7 @@
 <%= link_to 'New Product', new_product_path %>
 
+<p id="notice"><%= notice %></p>
+
 <div class="container anchor">
   <div class="row">
     <% @products.each do |product| %>
@@ -21,7 +23,7 @@
   </div>
 </div>
 
-<p id="notice"><%= notice %></p>
+
 
 <h1>Listing Products</h1>
 
