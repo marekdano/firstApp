@@ -21,7 +21,7 @@
       </div>
       <div class="collapse navbar-collapse" id="navcol-1">
         <ul class="nav navbar-nav navbar-right">
-          <li class="<%= 'active' if current_page?(home_about_path) %>"role="presentation"><%= link_to 'About', home_about_path %></li>
+          <li class="<%= 'active' if current_page?(about_path) %>"role="presentation"><%= link_to 'About', about_path %></li>
           <li class="<%= 'active' if current_page?(products_path) %>"role="presentation"><%= link_to 'Shop', products_path %></li>
           <li role="presentation"><a href="#">Sign in</a></li>
           <li role="presentation"><a href="#">Cart</a></li>
@@ -36,9 +36,9 @@
   <footer class="container-fluid">
       <nav>
         <ul class="footer-navbar">
-            <li><%= link_to 'About', home_about_path %></li>
+            <li><%= link_to 'About', about_path %></li>
             <li><%= link_to 'Shop', products_path %></li>
-            <li><%= link_to 'Contact', home_contact_path %></li>
+            <li><%= link_to 'Contact', contact_path %></li>
         </ul>
       </nav>
       <div class="social-buttons">
