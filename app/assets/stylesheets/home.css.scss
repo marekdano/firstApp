@@ -52,6 +52,27 @@ $max-width: 600px;
   }
 }
 
+
+/*****************************************************/
+/*             Header navigation style               */
+/*****************************************************/ 
+
+#search-form .form-control {
+  display: inline-block;
+}
+
+input.searchInput.form-control {
+  width: 90px;
+  transition: all .8s;
+}
+
+input.searchInput:focus {
+  width: 180px;
+}
+
+
+
+
 /*****************************************************/
 /*                   Footer style                    */
 /*****************************************************/ 

@@ -1,8 +1,10 @@
 <%= link_to 'New Product', new_product_path %>
 
-<p id="notice"><%= notice %></p>
-
 <div class="container anchor">
+
+  <p id="notice"><%= notice %></p>
+  <p id="notice"><%= @message_no_products %></p>
+
   <div class="row">
     <% @products.each do |product| %>
       <div class="col-sm-4 col-md-4 col-lg-4 item">
