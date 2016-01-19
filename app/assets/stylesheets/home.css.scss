@@ -234,8 +234,13 @@ div.hero {
 /*                Contact page                     */
 /***************************************************/
 
+textarea.form-control {
+  // increase rows
+  height: 6em;
+}
+
 .contact-section {
-  padding-top: 10%;
+  padding-top: 5%;
   padding-bottom: 10%;
 
   h4 {
