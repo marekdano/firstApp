@@ -24,12 +24,23 @@
         <ul class="nav navbar-nav navbar-right">
           <li class="<%= 'active' if current_page?(about_path) %>" role="about"><%= link_to 'About', about_path %></li>
           <li class="<%= 'active' if current_page?(products_path) %>" role="shop now"><%= link_to 'Shop', products_path %></li>
-          <li role="sing in"><a href="#">Sign in</a></li>
+          <li role="sing in">
+            <% if user_signed_in? %>
+              <%= link_to(current_user.first_name, destroy_user_session_path, :method => :delete) %>
+            <% else %>
+              <%= link_to "Sign in", new_user_session_path %>
+            <% end %>
+          </li>
           <li role="cart"><a href="#">Cart</a></li>
         </ul>
       </div>
     </div>
   </nav>
+
+  <div class="container">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
 
   <%= yield %>
   
