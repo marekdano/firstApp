@@ -1,4 +1,9 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="notice alert alert-success alert-responses">
+    <button class="close" data-dismiss="alert">&times;</button>
+    <%= notice %>        
+  </div>
+<% end %>
 
 <h1>Listing Users</h1>
 
