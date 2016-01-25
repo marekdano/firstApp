@@ -7,6 +7,28 @@
       <h4>PHONE</h4>
       <p>+412 345 6789</p>
       <p>Monday – Friday, 9am – 5pm GMT</p>
-    </div>
+
+      <%= flash[:notice] %>
+
+      <%= form_tag("/thank_you") do %>
+      <div class="row">
+        <div class="col-md-6 col-lg-7 anchor-top">
+          <div class="form-group">
+            <%= label_tag :name, "Name" %>
+            <%= text_field_tag :name, nil, class: "form-control", placeholder: "Enter Name" %>
+          </div>      
+          <div class="form-group">
+            <%= label_tag :email, "Email Address" %>
+            <%= text_field_tag :email, nil, class: "form-control", placeholder: "Enter Email" %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :message, "Message" %>
+            <%= text_area_tag :message, nil, class: "form-control", placeholder: "Enter Message" %>
+          </div>      
+        </div>
+      </div>
+      <%= submit_tag "Send", class: "btn btn-default" %>   
+      <% end %>
+    </div>   
   </div>  
 </div>

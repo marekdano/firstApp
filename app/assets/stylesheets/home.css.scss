@@ -34,6 +34,10 @@ $max-width: 600px;
   box-sizing: border-box;
 }
 
+.anchor-top {
+  margin-top: 3em;
+}
+
 .navbar {
   margin-bottom: 0;
   background: $primary-color;
@@ -50,6 +54,11 @@ $max-width: 600px;
     margin: 80px auto;
     color: $text-color;
   }
+}
+
+.alert-responses {
+  max-width: 600px; 
+  margin: 20px auto;
 }
 
 
@@ -230,8 +239,13 @@ div.hero {
 /*                Contact page                     */
 /***************************************************/
 
+textarea.form-control {
+  // increase rows
+  height: 6em;
+}
+
 .contact-section {
-  padding-top: 10%;
+  padding-top: 5%;
   padding-bottom: 10%;
 
   h4 {

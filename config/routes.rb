@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+  resources :users
+
   root 'home#index'
 
   resources :products
@@ -11,6 +14,8 @@ Rails.application.routes.draw do
   # get 'home/contact'  
   get '/contact', to: 'home#contact'
 
+  #get 'home/thank_you'
+  post '/thank_you', to: 'home#thank_you'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
