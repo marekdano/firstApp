@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_user! 
+  # before_action :authenticate_user!, :except => [:show, :index] # People can see all the users (index and show actions) of your app without logging in
+  load_and_authorize_resource
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
