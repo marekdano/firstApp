@@ -26,6 +26,11 @@ $max-width: 600px;
   padding: $top $right $bottom $left;
 }
 
+@mixin anchor-top-bottom($top, $bottom) {
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+
 .center {
   margin: 0 auto;
 }
@@ -36,6 +41,10 @@ $max-width: 600px;
 
 .anchor-top {
   margin-top: 3em;
+}
+
+.anchor-top-bottom-rate {
+  @include anchor-top-bottom(.9em, .9em);
 }
 
 .navbar {
