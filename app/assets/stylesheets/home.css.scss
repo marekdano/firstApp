@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'share';
+
 $primary-color: #fff;
 $secondary-color: #292c2f;
 $text-color: rgba(0, 0, 0, 0.85);
@@ -26,10 +28,6 @@ $max-width: 600px;
   padding: $top $right $bottom $left;
 }
 
-@mixin anchor-top-bottom($top, $bottom) {
-  margin-top: $top;
-  margin-bottom: $bottom;
-}
 
 .center {
   margin: 0 auto;
@@ -167,6 +165,10 @@ ul.footer-navbar {
   .carousel-caption {
     top: 40%;
   }
+}
+
+.carousel-image {
+  width: 100%;
 }
 
 
