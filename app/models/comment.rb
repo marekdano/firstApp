@@ -4,5 +4,7 @@ class Comment < ActiveRecord::Base
 
   validates :body, :user, :product, presence: true
   validates :rating, numericality: { only_integer: true }
+
+  #self.per_page = 2
   
 end
