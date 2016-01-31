@@ -26,6 +26,9 @@ gem 'devise'
 # Use CanCanCan for the user authorization
 gem 'cancancan'
 
+# Use will_pagination for splitting the list of something into multiple pages
+gem 'will_paginate'
+
 # Use Gravatar for the logged user's emails
 #gem 'gravtastic'
 
