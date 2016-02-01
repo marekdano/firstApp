@@ -1,4 +1,4 @@
-<div class="product-reviews">
+<div class="product-reviews" id="product-reviews">
   <div class="row">
     <% @comments.each do |comment| %>
     
@@ -14,3 +14,6 @@
     
     <% end %>
   </div>
+  <%= will_paginate @comments, :params => {:anchor => "product-reviews"} %>
+</div>
+
