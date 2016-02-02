@@ -25,20 +25,29 @@
         <ul class="nav navbar-nav navbar-right">
           <li class="<%= 'active' if current_page?(about_path) %>" role="about"><%= link_to 'About', about_path %></li>
           <li class="<%= 'active' if current_page?(products_path) %>" role="shop now"><%= link_to 'Shop', products_path %></li>
-          <li role="sing in">
-            <% if user_signed_in?
-              if current_user.first_name.blank? 
-                logout = "Logout"
-              else 
-                logout = "Logout #{current_user.first_name}"
-              end %>
           
-              <%= link_to(logout, destroy_user_session_path, :method => :delete) %>
-
-            <% else %>
-              <%= link_to "Sign in", new_user_session_path %>
-            <% end %>
+        <% if user_signed_in? %>  
+          <li class="dropdown" role="sign in">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              
+              <% if current_user.first_name.blank? %>
+                <%= current_user.email %>
+              <% else %>
+                <%= current_user.first_name %>
+              <% end %>
+                  
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", profile_path %></li>
+              <li><%= link_to("Logout", destroy_user_session_path, :method => :delete) %></li>
+            </ul>
           </li>
+
+        <% else %>
+          <li><%= link_to "Sign in", new_user_session_path %></li>
+        <% end %>
+          
           <li role="cart"><a href="#">Cart</a></li>
         </ul>
       </div>
