@@ -18,16 +18,15 @@
         <div class="caption details-text">
           <h3 class="pull-right"><%= number_to_currency @product.price, unit: "€ " %></h3>
           <h2><%= @product.name %></h2>
-          <h5><%= @product.description %></h5>
+          <h5 class="description"><%= @product.description %></h5>
           <h4>Average Rating: 
-          <div class="rated" data-score="<%= @product.average_rating %>"></div>
+            <div class="rated" data-score="<%= @product.average_rating %>"></div>
           </h4>
+        
+        <%= render 'new_comment' %>
+        <%= render 'comments' %>
         </div>
-        <div class="comments-container">
-          <%= render 'new_comment' %>
-          <%= render 'comments' %>
-        </div>
-      </div>
+      </div><!-- /thumbnail -->
     </div>
   </div>
 </div>

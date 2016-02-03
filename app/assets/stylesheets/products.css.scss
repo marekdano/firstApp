@@ -1,6 +1,7 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "home.css.scss";
 
 .anchor {
   padding: 3em 1em 5em 1em;
@@ -17,4 +18,34 @@
 .thumbnail {
   margin: 0 auto 20px;
   max-width: 600px; 
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.comment-box {
+  border-top: solid 1px #ddd;  
+  margin: 2em 1.8em 0 1.8em;
+  padding: 10px;
+}
+
+
+
+/*****************************************************/
+/*                     Comments                      */
+/*****************************************************/
+
+.new-comment-box {
+  @include anchor-top-bottom(3em, 1.8em);
+}
+
+.new-comment-header {
+  padding-left: 15px;
+}
+
+.rating {
+  &.anchor-top-bottom {
+    @include anchor-top-bottom(.9em, .9em);
+  }
 }
