@@ -20,6 +20,12 @@ Rails.application.routes.draw do
   #get 'home/thank_you'
   post '/thank_you', to: 'home#thank_you'
 
+  get '/profile' => 'users#show'
+
+  get '/profile/edit' => 'users#edit'
+
+  put '/profile' => 'users#update'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
