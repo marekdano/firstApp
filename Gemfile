@@ -50,6 +50,9 @@ group :development, :test do
 
   # Use sqlite3 as the database on the development environment
   gem 'sqlite3'
+
+  # Use RSpec for unit and functional testing
+  gem 'rspec-rails', '~> 3.0'
 end
 
 group :production do
