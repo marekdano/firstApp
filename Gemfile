@@ -29,6 +29,9 @@ gem 'cancancan'
 # Use will_pagination for splitting the list of something into multiple pages
 gem 'will_paginate'
 
+#Use factory_girl to provide factory functionality
+gem "factory_girl_rails", "~> 4.0"
+
 # Use Gravatar for the logged user's emails
 #gem 'gravtastic'
 
