@@ -39,5 +39,9 @@ describe Product do
     it "returns the invalid price if the text was added " do
       expect(Product.new(price: "bike")).not_to be_valid
     end
+
+    it "returns the invalid price if the text was added " do
+      expect(Product.new(price: "")).not_to be_valid
+    end
   end
 end

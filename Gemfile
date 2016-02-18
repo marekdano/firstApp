@@ -29,7 +29,7 @@ gem 'cancancan'
 # Use will_pagination for splitting the list of something into multiple pages
 gem 'will_paginate'
 
-#Use factory_girl to provide factory functionality
+# Use factory_girl to provide factory functionality
 gem "factory_girl_rails", "~> 4.0"
 
 # Use Gravatar for the logged user's emails
@@ -56,6 +56,17 @@ group :development, :test do
 
   # Use RSpec for unit and functional testing
   gem 'rspec-rails', '~> 3.0'
+
+  # Use Guard-rspec runs RSpec test automatically 
+  gem 'guard'
+
+  gem 'guard-rspec', require: false
+
+  # Use Spork speeds up tests
+  gem 'spork-rails'
+
+  # Use gem to talk guard and spork each other
+  gem 'guard-spork'
 end
 
 group :production do

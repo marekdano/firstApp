@@ -51,7 +51,6 @@ describe UsersController, :type => :controller do
       end
     end
 
-
     context "Admin is NOT logged in," do
       before do
         sign_in @user

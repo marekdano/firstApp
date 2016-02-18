@@ -4,7 +4,6 @@ describe HomeController, :type => :controller do
   context "GET #about" do
     before do
       get :about
-
     end
 
     it "responds successfully with an HTTP 200 status code" do
