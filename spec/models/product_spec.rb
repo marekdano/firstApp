@@ -3,7 +3,8 @@ require 'rails_helper'
 describe Product do 
   context "when the product has comments" do
     before do
-      @product = Product.create!(name: "race bike", description: "Bla bla", image_url: "bike6.jpg", price: "9.49")
+      #@product = Product.create!(name: "race bike", description: "Bla bla", image_url: "bike6.jpg", price: "9.49")
+      @product = FactoryGirl.create(:product)
       #@user = User.create!(first_name: "Marek", last_name: "Dano", email: "marek@example.com", password: "abcd1234")
       @user = FactoryGirl.build(:user)
       @product.comments.create!(rating: 1, user: @user, body: "Awful bike!")
