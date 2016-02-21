@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
-  
+  mount_uploader :image_url, ImageUploader
+
   has_many :orders
   has_many :comments
   

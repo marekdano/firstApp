@@ -32,6 +32,15 @@ gem 'will_paginate'
 # Use factory_girl to provide factory functionality
 gem "factory_girl_rails", "~> 4.0"
 
+# Use mini_magick gem for resizing the uploaded image
+gem 'mini_magick'
+
+# Use this gem for uploading any image from a folder to the app
+gem 'carrierwave'
+
+# Use fog gem for uploading the images to Amazon S3 
+gem 'fog'
+
 # Use Gravatar for the logged user's emails
 #gem 'gravtastic'
 
