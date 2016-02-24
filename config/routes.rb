@@ -10,6 +10,14 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:index, :show, :create, :destroy]
+   
+  # admin.site.com/admin/users
+  namespace 'admin' do
+    #constraints subdomain: 'admin' do
+      get '/', to: 'users#index' 
+      resources :users
+    #end
+  end
 
   #get 'home/about'
   get '/about', to: 'home#about'
