@@ -41,6 +41,9 @@ gem 'carrierwave'
 # Use fog gem for uploading the images to Amazon S3 
 gem 'fog'
 
+# Use stripe for handling the payments
+gem 'stripe'
+
 # Use Gravatar for the logged user's emails
 #gem 'gravtastic'
 

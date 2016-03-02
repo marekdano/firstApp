@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
   has_many :comments
   
   validates :name, :description, :image_url, presence: true
-  validates :price, numericality: true
+  validates :price, numericality: true, format: {with: /\A\d+(?:\.\d{0,2})?\z/, message: "only two decimal places allowed"}
 
 
   def average_rating 

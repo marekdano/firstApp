@@ -4,7 +4,7 @@
     <% @comments.each do |comment| %>
     
       <div class="col-md-11 comment-box">
-        <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
+        <p><%= comment.user.first_name if comment.user %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
           <% if signed_in? && current_user.admin? %>
             <%= link_to "Delete", product_comment_path(@product, comment), method: :delete, data: { confirm: "Are you sure to delete this comment?" } %>
           <% end %>
