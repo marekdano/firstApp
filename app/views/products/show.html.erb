@@ -24,10 +24,15 @@
           <h4>Average Rating: 
             <div class="rated" data-score="<%= @product.average_rating %>"></div>
           </h4>
+          
+        <% if signed_in? %> 
           <%= form_tag "/payments/create" do %>
             <%= hidden_field_tag(:product_id, @product.id) %>
             <%= render partial: "shared/stripe_checkout_button", locals: {product: @product} %>
           <% end %>
+        <% else %>
+          <button type="button" class="btn btn-default active">Login to buy this item</button>
+        <% end %>
         
         <%= render 'new_comment' %>
         <%= render 'comments' %>
