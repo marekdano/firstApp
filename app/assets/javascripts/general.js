@@ -9,9 +9,12 @@ $(document).on('ready page:load', function(){
   });
 
   $('.img-zoom').elevateZoom({
-    zoomType  : "lens", 
     lensShape : "square", 
-    lensSize : 300 
+    zoomWindowWidth: 200,
+    zoomWindowHeight: 200,
+    lensSize : 200,
+    zoomType  : "lens", 
+    cursor: "crosshair"
   });
 });
 
