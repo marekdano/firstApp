@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
         # use anchor getting to the specific page section
         # format.html { redirect_to product_path(@product, anchor: 'new-comment-box'), notice: "Review was created successfully." }
         format.json { render :show, status: :created, location: @product }
+        format.js
       else
         format.html { redirect_to @product, alert: "Review was not saved successfully. Comment cannot be empty and rate must be chosen." }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
