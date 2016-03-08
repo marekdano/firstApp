@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_admin! , only: :destroy # allows only admins to destroy
 
   def create
-    @product = Product.find(params[:product_id])
+    @product = Product.friendly.find(params[:product_id])
     @comment = @product.comments.build(comment_params)
     @comment.user = current_user
     
@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
         # format.html { redirect_to product_path(@product, anchor: 'new-comment-box'), notice: "Review was created successfully." }
         format.json { render :show, status: :created, location: @product }
       else
-        format.html { redirect_to @product, alert: "Review was not saved successfully." }
+        format.html { redirect_to @product, alert: "Review was not saved successfully. Comment cannot be empty and rate must be chosen." }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
