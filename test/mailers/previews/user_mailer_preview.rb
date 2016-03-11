@@ -11,6 +11,12 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.welcome(user)
   end
 
+  def payment_confirmation
+    user = User.new
+    user.email = "john@example.com"
+    UserMailer.payment_confirmation(user)
+  end
+
   class User
     attr_accessor :email
   end
