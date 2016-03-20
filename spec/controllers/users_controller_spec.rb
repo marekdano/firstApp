@@ -1,6 +1,6 @@
-require 'rails_helper.rb'
+require 'rails_helper'
 
-describe UsersController, :type => :controller do 
+describe UsersController, :type => :controller do
   
   before do
     #@user = User.create!(first_name: "Marek", last_name: "Dano", email: "marek@example.com", password: "123456789")

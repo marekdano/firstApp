@@ -34,10 +34,6 @@ describe Product do
       expect(Product.new(description: "")).not_to be_valid
     end
 
-    it "returns the invalid image url if the number was added" do
-      expect(Product.new(image_url: 34)).not_to be_valid
-    end
-
      it "returns the invalid image url if the empty string was added" do
       expect(Product.new(image_url: "")).not_to be_valid
     end
