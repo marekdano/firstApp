@@ -35,15 +35,23 @@ app.controller('OrdersCtrl', ['$scope', 'models', function($scope, models) {
   $scope.products = models.products.query();
 
   $scope.addOrder = function() {
-    console.log($scope.newOrder);
-    if(!$scope.newOrder.product_id || $scope.newOrder.total === '') {
+    console.log("newOrder: " + $scope.newOrder);
+    //if(!$scope.newOrder.product_id || $scope.newOrder.total === '') {
+    if($scope.newOrder === undefined) {
       console.log("Product ID or Total is empty.");
       return;
     }
-    $scope.orders.push($scope.newOrder);
+    //$scope.orders.push($scope.newOrder);
+    order = models.orders.save($scope.newOrder, function() {
+      recent_order = models.orders.get({id: order.id});
+      $scope.orders.push(recent_order);
+      $scope.newOrder = '';
+    });
   };
 
   $scope.deleteOrder = function(order) {
+    console.log(order);
+    models.orders.delete(order);
     $scope.orders.splice($scope.orders.indexOf(order), 1);
   };
 }]);
