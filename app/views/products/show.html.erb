@@ -31,7 +31,9 @@
             <%= render partial: "shared/stripe_checkout_button", locals: {product: @product} %>
           <% end %>
         <% else %>
-          <button type="button" class="btn btn-default active">Login to buy this item</button>
+          
+             <%= link_to "Login to buy this item", new_user_session_path, { class: "btn btn-default active" } %>
+          
         <% end %>
         
         <%= render 'new_comment' %>
