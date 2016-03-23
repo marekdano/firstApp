@@ -1,1 +1,55 @@
+<div class="container">
+  
+
 <p>Orders index page</p>
+
+<input ng-model="yourname" type="text" placeholder="Your name"></input>
+{{yourname}}
+
+
+<div ng-controller="OrdersCtrl">
+  Test $scope.myname: {{myname}}
+  
+  <h1>Orders</h1>
+
+  <form class="form-inline" ng-submit="addOrder()">
+    <strong>Add order: </strong>
+    
+    <input type="number" value="{{ orders[orders.length - 1].id + 1 }}" ng-model="newOrder.id">
+    <input type="number" step="0.01" class="form-control" placeholder= "Total" ng-model="newOrder.total">
+    <input type="number" class="form-control" placeholder="Product ID" ng-model="newOrder.product_id">
+
+    <input type="submit" value="+" class="btn btn-success">
+  </form>
+
+  <table class="table table-hover">
+    <thead>
+      <td>Order ID</td>
+      <td>Total</td>
+      <td>Product</td>
+      <td></td>
+    </thead>
+    <tbody>
+      <tr ng-repeat="order in orders | orderBy: '-id': reverse">
+        <td>
+          {{order.id}}
+        </td>
+        <td>
+          <strong>{{order.total | currency}}</strong>
+        </td>
+        <td>
+          {{order.product_id}}
+          <small ng-show="order.user_id"><br>userID-{{order.user_id}}</small>
+        </td>
+        <td>
+          <button ng-click="deleteOrder()" class="btn btn-danger btn-sm"><span><%= icon('trash')%></span></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  All orders are {{ orders.length }}
+  {{orders}}
+  Add new order:
+  {{ orders[orders.length - 1].id + 1 }}
+</div><!-- end OrdersCtrl -->
+</div><!-- end container-->
