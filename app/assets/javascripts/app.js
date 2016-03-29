@@ -9,7 +9,7 @@ var app = angular.module('shop', ['ngResource']);
 * from the html tag.
 */
 $(document).on('ready page:load', function() {
-  angular.bootstrap(document.body, [ 'shop'])
+  angular.bootstrap(document.body, ['shop'])
 });
 
 app.factory('models', ['$resource', function($resource) {
