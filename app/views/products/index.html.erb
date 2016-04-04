@@ -16,7 +16,7 @@
     <% @products.each do |product| %>
       <div class="col-sm-4 col-md-4 col-lg-4 item">
         <div class="thumbnail">
-          <%= image_tag(product.image_url.large, class: "img-responsive") %>
+          <%= image_tag(product.image_url.thumb, class: "img-responsive") %>
           <div class="caption">
             <h4 class="pull-right"><%= number_to_currency product.price, unit: "€ " %></h4>
             <h4 class="#">
