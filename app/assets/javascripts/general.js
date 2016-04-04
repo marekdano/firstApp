@@ -8,15 +8,14 @@ var ratyjs = function() {
   });
 }
  
- 
 $(document).on('ready page:load', function(){
   ratyjs();
 
   $('.img-zoom').elevateZoom({
     lensShape : "square", 
-    zoomWindowWidth: 200,
-    zoomWindowHeight: 200,
-    lensSize : 200,
+    zoomWindowWidth: 100,
+    zoomWindowHeight: 100,
+    lensSize : 150,
     zoomType  : "lens", 
     cursor: "crosshair"
   });
