@@ -8,6 +8,6 @@ FactoryGirl.define do
       # you'll get an error if the file doesn't exist
       File.open(File.join(Rails.root, 'spec', 'support', 'bike2.jpg'))
     end
-    price "9.49"
+    price 9.49
   end
 end

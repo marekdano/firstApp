@@ -80,6 +80,9 @@ group :development, :test do
   # Use RSpec for unit and functional testing
   gem 'rspec-rails', '~> 3.0'
 
+  # Use capybara for acceptance testing 
+  gem 'capybara'
+
   # Use Guard-rspec runs RSpec test automatically 
   gem 'guard'
 
