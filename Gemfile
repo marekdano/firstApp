@@ -83,6 +83,12 @@ group :development, :test do
   # Use capybara for acceptance testing 
   gem 'capybara'
 
+  # Use selenium for testing using firefox browser
+  gem 'selenium-webdriver'
+
+  # Use gem for clearing down the database
+  gem 'database_cleaner'
+
   # Use Guard-rspec runs RSpec test automatically 
   gem 'guard'
 
