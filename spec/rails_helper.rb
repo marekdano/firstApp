@@ -7,6 +7,8 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'devise'
+require "support/login_user"
+require "support/create_products"
 #require 'database_cleaner'
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -57,5 +59,14 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
   config.include Devise::TestHelpers, :type => :controller
+
+  config.include Warden::Test::Helpers
+  config.before :suite do
+    Warden.test_mode!
+  end
+  config.after :each do
+    Warden.test_reset!
+  end
 end
