@@ -1,17 +1,19 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user! # allows only signed in users 
-  before_action :authenticate_admin! , only: :destroy # allows only admins to destroy
+  #before_action :authenticate_admin!, only: :destroy # allows only admins to destroy
 
   def create
     @product = Product.friendly.find(params[:product_id])
     @comment = @product.comments.build(comment_params)
     @comment.user = current_user
+
+    logger.debug "CURRENT USER is admin #{authenticate_admin!}"
     
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @product, notice: "Review was created successfully." }
         # use anchor getting to the specific page section
-        # format.html { redirect_to product_path(@product, anchor: 'new-comment-box'), notice: "Review was created successfully." }
+        format.html { redirect_to product_path(@product, anchor: 'new-comment-box'), notice: "Review was created successfully." }
         format.json { render :show, status: :created, location: @product }
         format.js
       else
@@ -23,9 +25,17 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    logger.debug "CURRENT USER is admin #{authenticate_admin!}"
+    
     @comment = Comment.find(params[:id])
     product = @comment.product
-    @comment.destroy
+
+    if authenticate_admin!
+      @comment.destroy
+    else
+      flash[:alert] = "You are not allowed to delete comments."
+    end
+
     redirect_to product
   end
   
