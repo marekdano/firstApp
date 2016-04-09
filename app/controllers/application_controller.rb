@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
 
   def store_action
     return unless request.get? 
-    if (request.path != "/users/login" &&
-        request.path != "/users/logout" &&
+    if (request.path != "/login" &&
+        request.path != "/logout" &&
         request.path != "/users/password/new" &&
         request.path != "/users/password/edit" &&
         request.path != "/users/confirmation" &&
@@ -23,7 +23,8 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    stored_location_for(resource) || root_path
+    #logger.debug "stored_location_for(:user): #{stored_location_for(:user)}"
+    stored_location_for(:user) || root_path
   end
 
   def after_sign_out_path_for(resource_or_scope)

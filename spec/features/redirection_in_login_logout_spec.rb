@@ -8,7 +8,7 @@ describe "display products page" do
 
   it "user logs in" do
     visit "/products"
-    visit "/users/login"
+    visit "/login"
     within("#new_user") do
       fill_in 'user_email', :with => @user.email
       fill_in 'user_password', :with => @user.password
@@ -19,7 +19,7 @@ describe "display products page" do
 
   it "user logs out" do
     visit "/products"
-    visit "/users/login"
+    visit "/login"
     within("#new_user") do
       fill_in 'user_email', :with => @user.email
       fill_in 'user_password', :with => @user.password
