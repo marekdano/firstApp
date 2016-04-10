@@ -6,7 +6,7 @@ describe "display products page" do
     @user = FactoryGirl.create(:user)
   end
 
-  it "user logs in" do
+  it "when user logs in" do
     visit "/products"
     visit "/login"
     within("#new_user") do

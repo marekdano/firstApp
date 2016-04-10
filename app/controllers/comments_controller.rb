@@ -19,6 +19,7 @@ class CommentsController < ApplicationController
       else
         format.html { redirect_to @product, alert: "Review was not saved successfully. Comment cannot be empty and rate must be chosen." }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.js { render 'errors.js.erb' }
       end
     end
     #redirect_to product_path(@product)

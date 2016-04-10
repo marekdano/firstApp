@@ -6,13 +6,13 @@ describe "display product page" do
     Capybara.current_driver = :selenium
   end
 
-  it "user is logged in" do
+  it "when user is logged in" do
     login_user
     visit "/products/bike"
     page.save_screenshot('screenshot_product_page_user_logged_in.png')
   end
 
-  it "user is NOT logged in" do
+  it "when user is NOT logged in" do
     visit "/products/bike"
     page.save_screenshot('screenshot_product_page_user_NOT_logged_in.png')
   end

@@ -18,10 +18,10 @@ $(document).on('ready page:load', function(){
     lensSize : 150,
     zoomType  : "lens", 
     cursor: "crosshair"
-  });
+  });  
 });
 
 $(function() {
-  $(".alert").delay(4000).fadeOut(1500);
+  $(".alert").delay(4000).fadeOut(1500); 
 });
 
