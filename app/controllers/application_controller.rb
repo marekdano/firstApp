@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
         request.path != "/users/password/new" &&
         request.path != "/users/password/edit" &&
         request.path != "/users/confirmation" &&
-        request.path != "/users/sign_up" &&
+        request.path != "/sign_up" &&
         !request.xhr?) # don't store ajax calls
       store_location_for(:user, request.fullpath)
     end

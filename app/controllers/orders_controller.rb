@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
 
   def index
    @orders = Order.all.to_json(:include => [{:product => {:only => :name}}, {:user => {:only => :email}}])
+   #@orders.merge("total_orders" => $redis.get("total_orders"))
    respond_with @orders
   end
 
@@ -24,6 +25,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.create(order_params)
+    $redis.incr("total_orders")
     respond_with @order
   end
 

@@ -53,6 +53,9 @@ gem 'stripe'
 # Use for creating pretty URL’s as if they were numeric ids for ActiveRecord models
 gem 'friendly_id', '~> 5.1.0'
 
+# Use redis for caching
+gem 'redis-rails'
+
 # Use Gravatar for the logged user's emails
 #gem 'gravtastic'
 

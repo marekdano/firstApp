@@ -20,6 +20,7 @@ class PaymentsController < ApplicationController
           product_id: @product.id, 
           total: @product.price
         )
+        $redis.incr("total_orders")
         UserMailer.payment_confirmation(@user).deliver_now
       end
 

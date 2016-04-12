@@ -4,6 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     super
     if @user.persisted?
+      $redis.incr("total_users")
       UserMailer.welcome(@user).deliver_now
     end
   end
