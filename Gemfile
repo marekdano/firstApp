@@ -109,6 +109,8 @@ group :production do
   gem 'rails_12factor'
   # Use postgreSQL as the database on the production environment
   gem 'pg'
+
+  gem 'newrelic_rpm'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
