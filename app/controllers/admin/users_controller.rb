@@ -9,6 +9,7 @@ class Admin::UsersController < ApplicationController
   # GET /admin/users.json
   def index
     @users = User.all
+    @total_users = $redis.get("total_users")
   end
 
   # GET /admin/users/1
@@ -32,6 +33,7 @@ class Admin::UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        $redis.incr("total_users")
         format.html { redirect_to [:admin, @user], notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else

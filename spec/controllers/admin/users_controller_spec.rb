@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe UsersController, :type => :controller do
+describe Admin::UsersController, :type => :controller do
   
   before do
     #@user = User.create!(first_name: "Marek", last_name: "Dano", email: "marek@example.com", password: "123456789")
@@ -34,6 +34,31 @@ describe UsersController, :type => :controller do
       it "redirects to login" do
         get :show, id: @user.id
         expect(response).to redirect_to(new_user_session_path)
+      end
+    end
+  end
+
+  describe "Get #index" do
+    context "Admin is logged in," do
+      before do
+        sign_in @admin
+      end
+
+      it "load users profiles" do
+        get :index 
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
+      end
+    end
+
+    context "Admin is NOT logged in," do
+      before do
+        sign_in @user
+      end
+
+      it "load users profiles" do
+        get :index 
+        expect(response).to redirect_to(root_path)
       end
     end
   end
