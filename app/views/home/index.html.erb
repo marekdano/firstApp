@@ -1,21 +1,25 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <% @random_total_products.times do |i| %>
-     <li data-target="#carousel-example-generic" data-slide-to="<%= i %>" class="<%= "active" if i == 0 %>"></li>    
+    <% if @random_total_products %>
+      <% @random_total_products.times do |i| %>
+       <li data-target="#carousel-example-generic" data-slide-to="<%= i %>" class="<%= "active" if i == 0 %>"></li>    
+      <% end %>
     <% end %>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <% @products.each do |product| %>
-    <div class="hero item<%= " active" if product == @products.first %>">
-      <%= image_tag(product.image_url.large, class: 'carousel-image') %>
-      <div class="carousel-caption">
-        <h1 class="hero-title"><%= product.name %></h1>
-        <p><%= link_to 'Shop now', products_path, class: "btn btn-primary btn-lg hero-button", role: "button" %></p>
-      </div>
-    </div>
+    <% if @products %>
+      <% @products.each do |product| %>
+        <div class="hero item<%= " active" if product == @products.first %>">
+          <%= image_tag(product.image_url.large, class: 'carousel-image') %>
+          <div class="carousel-caption">
+            <h1 class="hero-title"><%= product.name %></h1>
+            <p><%= link_to 'Shop now', products_path, class: "btn btn-primary btn-lg hero-button", role: "button" %></p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 

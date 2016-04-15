@@ -107,9 +107,11 @@ end
 group :production do
   # Gem for deploying the app on Heroku  
   gem 'rails_12factor'
+
   # Use postgreSQL as the database on the production environment
   gem 'pg'
-
+ 
+  # Use newrelic for monitoring the performance of the app
   gem 'newrelic_rpm'
 end
 

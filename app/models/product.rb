@@ -4,8 +4,8 @@ class Product < ActiveRecord::Base
 
   mount_uploader :image_url, ImageUploader
 
-  has_many :orders
-  has_many :comments
+  has_many :orders, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   
   validates :name, :description, :image_url, presence: true
