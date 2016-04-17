@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     #constraints subdomain: 'admin' do
       get '/', to: 'users#index' 
       resources :users
+      resources :products, except: [:show] do
+        resources :comments, only: [:destroy]
+      end
     #end
   end
 

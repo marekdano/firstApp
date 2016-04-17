@@ -1,4 +1,4 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < Admin::BaseController
   before_filter :authenticate_user! 
   # before_action :authenticate_user!, :except => [:show, :index] # People can see all the users (index and show actions) of your app without logging in
   load_and_authorize_resource

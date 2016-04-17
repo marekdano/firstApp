@@ -7,6 +7,8 @@ class OrdersController < ApplicationController
   skip_before_action :verify_authenticity_token, if: :json_request?
   respond_to :json, :html
 
+  layout "admin"
+
 # Asked Kareem why we are not using AuthToken????
 
   def index
