@@ -1,7 +1,13 @@
 <div class="sidebar">
   <ul class="sidebar-list">
-    <li class="sidebar-link">Customers</li>
-    <li class="sidebar-link">Orders</li>
-    <li class="sidebar-link">Products</li>
+    <li class="sidebar-link">
+      <%= link_to "Customer", admin_users_path %>
+    </li>
+    <li class="sidebar-link">
+      <%= link_to "Products", admin_products_path %>
+    </li>
+    <li class="sidebar-link">
+      <%= link_to "Orders", orders_path %>
+    </li>
   </ul>
 </div>
