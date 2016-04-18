@@ -64,17 +64,15 @@
     </div>
   <% end %>
 
-  <div class="container-fluid">
-    <div class=" col-md-2">
+  <div class="container-fluid main-container">
+    <div class="col-md-2 sidebar">
       <%= render 'admin/sidebar' %>
     </div>
 
-    <div class=" col-md-10">
+    <div class="col-md-10 content-container">
       <%= yield %>
     </div>
   </div>
  
-  <footer class="container-fluid">
-  </footer>
 </body>
 </html>

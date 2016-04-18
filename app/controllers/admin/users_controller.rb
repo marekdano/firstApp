@@ -2,7 +2,7 @@ class Admin::UsersController < Admin::BaseController
   before_filter :authenticate_user! 
   # before_action :authenticate_user!, :except => [:show, :index] # People can see all the users (index and show actions) of your app without logging in
   load_and_authorize_resource
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
   #before_action :verify_user, only: [:update]
 
   # GET /admin/users
@@ -10,11 +10,6 @@ class Admin::UsersController < Admin::BaseController
   def index
     @users = User.all
     @total_users = $redis.get("total_users")
-  end
-
-  # GET /admin/users/1
-  # GET /admin/users/1.json
-  def show
   end
 
   # GET /admin/users/new

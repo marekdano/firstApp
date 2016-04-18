@@ -1,4 +1,5 @@
-<%= form_for [:admin, @user] do |f| %>
+
+<%= form_for [:admin, @user], :html => {:class => "form-horizontal center"} do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,15 +12,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+  <div class="form-group">
+    <%= f.label :first_name, "First name", class: "col-md-2 col-sm-2 control-label" %>
+    <div class="col-md-6 col-sm-10">
+      <%= f.text_field :first_name, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+  <div class="form-group">
+    <%= f.label :last_name, "Second name", class: "col-md-2 col-sm-2 control-label" %>
+    <div class="col-md-6 col-sm-10">
+      <%= f.text_field :last_name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, "Email", class: "col-md-2 col-sm-2 control-label" %>
+    <div class="col-md-6 col-sm-10">
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <div class="col-sm-offset-2 col-sm-10 btn-submit">
+      <%= f.submit "Update", class: "btn btn-default" %>
+    </div>
   </div>
 <% end %>
