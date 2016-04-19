@@ -1,11 +1,15 @@
 @import "application";
 
 body {
-  min-width: 780px;
+  min-width: 740px;
 }
 
 h1 {
-  padding: 1.2em 0;
+  padding: 1.2em 0 0.9em;
+}
+
+table {
+  margin-top: 2em;
 }
 
 .main-container {
@@ -19,13 +23,27 @@ h1 {
 }
 
 .sidebar {
-  // background-color: #f2f2f2;
+  margin-right: -4em;
   padding-bottom: 2em;
 
   .sidebar-list {
     list-style: none;
     li {
       padding-top: 1.5em;
+    }
+  }
+}
+
+table.product-table {
+  & tbody tr td {
+    vertical-align: middle;
+
+    & .product-image {
+      max-width: 80px;
+    }
+
+    & .link-delete {
+      color: #c77067;
     }
   }
 }

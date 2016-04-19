@@ -1,10 +1,32 @@
-<% @products.each do |product| %>
-<tr>
-  <td><%= product.name %></td>
-  <td><%= product.description %></td>
-  <td><%= product.image_url %></td>
-  <td><%= link_to 'Show', product %></td>
-  <td><%= link_to 'Edit', edit_product_path(product) %></td>
-  <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</tr>
-<% end %>
+
+<h1>Products</h1>
+
+<%= link_to 'New product', new_admin_product_path, class: "btn btn-info" %>
+
+<table class="table table-hover product-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Image URL</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead> 
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= number_to_currency product.price, unit: "€" %></td>
+        <td><%= product.description %></td>
+        <td><%= image_tag(product.image_url.thumb, class: "product-image") %></td>
+        <td><%= link_to 'Edit', edit_admin_product_path(product) %></td>
+        <td><%= link_to 'Destroy', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure you want to delete the product?' }, class: 'link-delete' %></td>
+      </tr>
+    <% end %>
+  </tbody> 
+</table>
+
+

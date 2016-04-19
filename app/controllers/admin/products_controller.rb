@@ -1,7 +1,8 @@
 class Admin::ProductsController < Admin::BaseController
+  before_filter :authenticate_user! 
+  load_and_authorize_resource
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
-
+  
   # GET /products
   # GET /products.json
   def index
@@ -44,7 +45,7 @@ class Admin::ProductsController < Admin::BaseController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to admin_products_path, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
@@ -58,7 +59,7 @@ class Admin::ProductsController < Admin::BaseController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to admin_products_path, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit }
@@ -72,7 +73,7 @@ class Admin::ProductsController < Admin::BaseController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to admin_products_path, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
