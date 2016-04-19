@@ -1,19 +1,15 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < Admin::BaseController
   before_filter :authenticate_user! 
   # before_action :authenticate_user!, :except => [:show, :index] # People can see all the users (index and show actions) of your app without logging in
   load_and_authorize_resource
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
   #before_action :verify_user, only: [:update]
 
   # GET /admin/users
   # GET /admin/users.json
   def index
     @users = User.all
-  end
-
-  # GET /admin/users/1
-  # GET /admin/users/1.json
-  def show
+    @total_users = $redis.get("total_users")
   end
 
   # GET /admin/users/new
@@ -32,7 +28,8 @@ class Admin::UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to [:admin, @user], notice: 'User was successfully created.' }
+        $redis.incr("total_users")
+        format.html { redirect_to admin_users_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -60,7 +57,7 @@ class Admin::UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to admin_users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to admin_users_path, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

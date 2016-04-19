@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :users
+  resources :users, except: [:index, :new]
 
   resources :products do
     resources :comments
@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   namespace 'admin' do
     #constraints subdomain: 'admin' do
       get '/', to: 'users#index' 
-      resources :users
+      resources :users, except: [:show]
+      resources :products, except: [:show] do
+        resources :comments, only: [:destroy]
+      end
     #end
   end
 

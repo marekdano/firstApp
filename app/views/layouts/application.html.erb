@@ -48,7 +48,6 @@
           <li><%= link_to "Sign in", new_user_session_path %></li>
         <% end %>
           
-          <li role="cart"><a href="#">Cart</a></li>
         </ul>
       </div>
     </div>
@@ -70,20 +69,20 @@
   <%= yield %>
   
   <footer class="container-fluid">
-      <nav>
-        <ul class="footer-navbar">
-            <li><%= link_to 'About', about_path %></li>
-            <li><%= link_to 'Shop', products_path %></li>
-            <li><%= link_to 'Contact', contact_path %></li>
-        </ul>
-      </nav>
-      <div class="social-buttons">
-        <%= link_to icon("facebook", class: "fa social-button"), "https://facebook.com" %>
-        <%= link_to icon("twitter", class: "fa social-button"), "https://twitter.com" %>
-      </div>
-      <div id="copyright">
-        &copy; CarosaBikes 2015
-      </div>
+    <nav>
+      <ul class="footer-navbar">
+        <li><%= link_to 'About', about_path %></li>
+        <li><%= link_to 'Shop', products_path %></li>
+        <li><%= link_to 'Contact', contact_path %></li>
+      </ul>
+    </nav>
+    <div class="social-buttons">
+      <%= link_to icon("facebook", class: "fa social-button"), "https://facebook.com" %>
+      <%= link_to icon("twitter", class: "fa social-button"), "https://twitter.com" %>
+    </div>
+    <div id="copyright">
+      &copy; CarosaBikes 2016
+    </div>
   </footer>
 
   <!-- http://cienneny.com -->

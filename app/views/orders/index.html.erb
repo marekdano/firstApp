@@ -1,14 +1,5 @@
 
-<div class="container">
-  
-<p>Orders index page</p>
-
-<input ng-model="yourname" type="text" placeholder="Your name"></input>
-{{yourname}}
-
-
 <div ng-controller="OrdersCtrl">
-  Test $scope.myname: {{myname}}
   
   <h1>Orders</h1>
 
@@ -25,15 +16,15 @@
       </option>
     </select>
 
-    <input type="submit" value="+" class="btn btn-success">
+    <input type="submit" value="+" class="btn btn-info">
   </form>
 
   <table class="table table-hover">
     <thead>
-      <td>Order ID</td>
-      <td>Total</td>
-      <td>Product</td>
-      <td></td>
+      <th>Order ID</th>
+      <th>Total</th>
+      <th>Product</th>
+      <th></th>
     </thead>
     <tbody>
       <tr ng-repeat="order in orders | orderBy: '-id': reverse">
@@ -55,8 +46,5 @@
   </table>
   
   Total orders at the moment are: {{ orders.length }}
-  {{orders}}
-  Add new order with ID:
-  {{ orders[orders.length - 1].id + 1 }}
+
 </div><!-- end OrdersCtrl -->
-</div><!-- end container-->
