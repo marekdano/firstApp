@@ -1,15 +1,12 @@
 
-<%= link_to 'Back', products_path %>
-| <%= link_to 'Edit', edit_product_path(@product) %>
-<!-- | <%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' } %> -->
-
 <div class="container anchor">
+  <%= link_to '< Back', products_path %>
   <div class="row">
     <div class="col-md-12">
       <div class="thumbnail">
         <%= image_tag(@product.image_url.large, class: "img-responsive img-zoom", data_zoom_image: @product.image_url.medium) %>
         <div class="caption details-text">
-          <h3 class="pull-right"><%= number_to_currency @product.price, unit: "$ " %></h3>
+          <h4 class="pull-right product-item-price"><%= number_to_currency @product.price, unit: "$" %></h4>
           <h2><%= @product.name %></h2>
           <h5 class="description"><%= @product.description %></h5>
           <h4>Average Rating: 
@@ -32,5 +29,9 @@
         </div>
       </div><!-- /thumbnail -->
     </div>
+  </div>
+  <div class="container-links">
+    <%= link_to 'Edit', edit_product_path(@product) %> | 
+    <%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 </div>

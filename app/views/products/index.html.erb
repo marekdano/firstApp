@@ -1,4 +1,3 @@
-<%= link_to 'New Product', new_product_path %>
 
 <div class="container anchor">
 
@@ -6,22 +5,21 @@
 
   <div class="row">
     <% @products.each do |product| %>
-      <div class="col-sm-4 col-md-4 col-lg-4 item">
-        <div class="thumbnail">
-          <%= link_to product do %>
-            <%= image_tag(product.image_url.thumb, class: "img-responsive") %>
-            <div class="caption">
-              <h4 class="pull-right"><%= number_to_currency product.price, unit: "€ " %></h4>
-              <h4 class="#">
-                <%= link_to product.name, product %>
-              </h4>
-              <p>
-                <%= product.description %>
-              </p>
-            </div>
-          <% end %>
+      <div class="col-sm-4 col-md-4 col-lg-4 product-item">
+        <%= link_to product do %>
+          <%= image_tag(product.image_url.thumb, class: "img-responsive") %>
+        <% end %>
+        <div class="text-center">   
+          <h4>
+            <%= link_to product.name, product, class: "text-uppercase product-list-item-title" %>
+          </h4>
+          <p><%= number_to_currency product.price, unit: "$" %>
+          </p>
         </div>
       </div>
     <% end %>
+  </div>
+  <div class="container-links">
+    <%= link_to 'New Product', new_product_path %>
   </div>
 </div>

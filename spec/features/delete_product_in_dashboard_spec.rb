@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "delete a product" do
+describe "Delete a product" do
   before do
     create_products
     login_user

@@ -11,35 +11,9 @@ describe Admin::UsersController, :type => :controller do
     @admin = FactoryGirl.create(:admin)
   end
 
-  describe "Get #show" do
-    context "User is logged in," do
-      before do
-        sign_in @user
-      end
-
-      it "load correct user details" do
-        get :show, id: @user.id
-        expect(response).to be_success
-        expect(response).to have_http_status(200)
-        expect(assigns(:user)).to eq @user
-      end
-
-      it "redirects to the root if another user wants access the other profile" do
-        get :show, id: @user2.id
-        expect(response).to redirect_to(root_path)
-      end
-    end
-
-    context "No user is logged in," do
-      it "redirects to login" do
-        get :show, id: @user.id
-        expect(response).to redirect_to(new_user_session_path)
-      end
-    end
-  end
-
   describe "Get #index" do
     context "Admin is logged in," do
+
       before do
         sign_in @admin
       end
@@ -52,6 +26,7 @@ describe Admin::UsersController, :type => :controller do
     end
 
     context "Admin is NOT logged in," do
+
       before do
         sign_in @user
       end
@@ -62,5 +37,4 @@ describe Admin::UsersController, :type => :controller do
       end
     end
   end
-
 end

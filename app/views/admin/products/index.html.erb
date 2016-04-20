@@ -19,7 +19,7 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.name %></td>
-        <td><%= number_to_currency product.price, unit: "€" %></td>
+        <td><%= number_to_currency product.price, unit: "$" %></td>
         <td><%= product.description %></td>
         <td><%= image_tag(product.image_url.thumb, class: "product-image") %></td>
         <td><%= link_to 'Edit', edit_admin_product_path(product) %></td>

@@ -8,8 +8,12 @@
   padding: 3em 1em 5em 1em;
 }
 
-.item:nth-child(3n+1) {
-  clear: left;
+.product-item {
+  margin-top: 3em;
+
+  &:nth-child(3n+1) {
+    clear: left;
+  }
 }
 
 .btn-submit {
@@ -19,6 +23,16 @@
 .thumbnail {
   margin: 0 auto 20px;
   max-width: 600px;
+}
+
+.product-list-item-title {
+  font-size: 1.1em;
+  line-height: 22px;
+  letter-spacing: .05em;
+}
+
+.product-item-price {
+  margin-top: 20px;
 }
 
 .description {
