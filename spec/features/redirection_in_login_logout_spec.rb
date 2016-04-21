@@ -17,7 +17,7 @@ describe "display products page" do
     expect(page).to have_current_path("/products")
   end
 
-  it "user logs out" do
+  it "when user logs out" do
     visit "/products"
     visit "/login"
     within("#new_user") do
@@ -25,8 +25,8 @@ describe "display products page" do
       fill_in 'user_password', :with => @user.password
     end
     click_button "Log in"
-    visit "/products/1"
+    visit "/products/3"
     click_link "Logout"
-    expect(page).to have_current_path("/products/1")
+    expect(page).to have_current_path("/products/3")
   end
 end

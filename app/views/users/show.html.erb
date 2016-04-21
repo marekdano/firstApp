@@ -1,19 +1,41 @@
+<!-- 
 <% if notice %>
   <div class="notice alert alert-success alert-responses">
     <button class="close" data-dismiss="alert">&times;</button>
     <%= notice %>        
   </div>
 <% end %>
+ -->
+<div class="container profile-container"> 
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-4">
+      <%= image_tag("profile-image.png", class: "img-circle img-responsive profile-image", alt: "profile image") %>
+    </div>
+    <div class="col-md-8">
+      <h1>Profile</h1>
+      <p>
+        <strong>First name:</strong>
+        <%= @user.first_name %>
+      </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+      <p>
+        <strong>Last name:</strong>
+        <%= @user.last_name %>
+      </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+      <p>
+        <strong>Email:</strong>
+        <%= @user.email %>
+      </p>
+    </div>
+  </div>
+    
+  <div class="container-links">
+    <%= link_to 'Edit', profile_edit_path %>
+  </div>
 
-<%= link_to 'Edit', profile_edit_path %> |
-<%= link_to 'Back', users_path %>
+</div>
+</div>
+
+
