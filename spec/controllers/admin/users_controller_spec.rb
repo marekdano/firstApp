@@ -37,4 +37,29 @@ describe Admin::UsersController, :type => :controller do
       end
     end
   end
+
+  describe "Get #edit" do
+    context "Admin is logged in, " do 
+      before do
+        sign_in @admin
+      end
+
+      it "load a user edit page" do
+        get :edit, {id: @user.id}
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
+      end
+    end
+
+    context "User is logged in, " do 
+      before do
+        sign_in @user
+      end
+
+      it "load a user2 edit page" do
+        get :edit, {id: @user2.id}
+        expect(response).to redirect_to(root_path)
+      end
+    end
+  end
 end

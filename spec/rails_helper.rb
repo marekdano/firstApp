@@ -8,6 +8,7 @@ require 'rspec/rails'
 require 'capybara/rspec'
 require 'devise'
 require "support/login_user"
+require "support/login_admin"
 require "support/create_products"
 #require 'database_cleaner'
 # Add additional requires below this line. Rails is not loaded until this point!
