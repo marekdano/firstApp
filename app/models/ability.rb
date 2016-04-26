@@ -35,7 +35,7 @@ class Ability
     if user.admin?
       can :manage, :all  
     else 
-      can [:show, :create, :update, :destroy], User, id: user.id
+      can [:show, :create, :update, :destroy, :show_user_orders], User, id: user.id
     end
 
   end

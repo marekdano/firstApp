@@ -56,6 +56,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def show_user_orders
+    @orders = Order.where(user_id: current_user)
+    respond_to do |format| 
+      format.html { render :show_user_orders }
+      format.json { render json: @orders }
+    end
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

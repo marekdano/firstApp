@@ -1,6 +1,8 @@
 
 <div class="container anchor">
-  <%= link_to '< Back', products_path %>
+  <div class="container-links link-back">
+    <%= link_to '< Back', products_path %>
+  </div>
   <div class="row">
     <div class="col-md-12">
       <div class="thumbnail">
@@ -31,7 +33,9 @@
     </div>
   </div>
   <div class="container-links">
-    <%= link_to 'Edit', edit_product_path(@product) %> | 
-    <%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% if signed_in? && current_user.admin? %>
+      <%= link_to 'Edit', edit_product_path(@product) %> | 
+      <%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   </div>
 </div>

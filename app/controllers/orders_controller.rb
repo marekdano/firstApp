@@ -9,7 +9,6 @@ class OrdersController < ApplicationController
 
   layout "admin"
 
-# Asked Kareem why we are not using AuthToken????
 
   def index
    @orders = Order.all.to_json(:include => [{:product => {:only => :name}}, {:user => {:only => :email}}])
@@ -33,6 +32,7 @@ class OrdersController < ApplicationController
   def destroy
     respond_with Order.destroy(params[:id])
   end
+
 
   protected
 

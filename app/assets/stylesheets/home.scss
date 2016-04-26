@@ -77,17 +77,25 @@ $max-width: 600px;
 /*             Header navigation style               */
 /*****************************************************/ 
 
-#search-form .form-control {
-  display: inline-block;
+#search-form {
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    text-align: left;
+  }
+
+  .form-control {
+    display: inline-block;
+  }
 }
 
 input.searchInput.form-control {
-  width: 90px;
+  width: 164px;
   transition: all .8s;
 }
 
 input.searchInput:focus {
-  width: 180px;
+  width: 242px;
 }
 
 

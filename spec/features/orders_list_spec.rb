@@ -10,11 +10,11 @@ describe "display list of orders" do
   # it "when admin is logged in" do
   #   login_admin
   #   visit "/orders"
-  #   within('form') do
-  #     fill_in 'total', :with => 100.99
+  #   #within('form') do
+  #     fill_in 'input', :with => 100.99
   #     select('bike', :from => 'select')
   #     #find('product-name').find(:xpath, 'option[1]').select_option
-  #   end   
+  #   #end   
   #   click_button "+"
   #   expect(page).to have_content "100.99"
   # end

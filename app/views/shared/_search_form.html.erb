@@ -1,7 +1,7 @@
-<%= form_tag("/products", method: "get", class: "navbar-form navbar-right", id: "search-form", role: "Search") do %>
+<%= form_tag("/products", method: "get", class: "navbar-form", id: "search-form", role: "Search") do %>
   <div class="form-group">
     <% #label_tag(:q, "Search for:") %>
-    <%= text_field_tag(:q, "", class: "searchInput form-control", placeholder: "Search a product...") %>
+    <%= text_field_tag(:q, "", class: "searchInput form-control", placeholder: "Search for a product...") %>
     <%= button_tag(class: "btn btn-default") do
       content_tag(:span, "", class: "glyphicon glyphicon-search")
     end %>
