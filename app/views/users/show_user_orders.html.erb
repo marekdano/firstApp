@@ -1,3 +1,21 @@
-<p>User's Orders page</p>
-
-<% @orders %>
+<div class="container anchor" id="user-orders-wrapper">
+  
+  <h1>Your Orders</h1>
+  
+  <table class="table table-hover">
+    <thead>
+      <th>Order ID</th>
+      <th>Product</th>
+      <th class="text-right">Total</th>
+    </thead>
+    <tbody>
+      <% @user_orders.each do |order| %>
+        <tr>
+          <td><%= order.id %></td>
+          <td><%= order.product_id %></td>
+          <td class="text-right"><%= number_to_currency order.total, unit: "$"  %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
