@@ -57,9 +57,9 @@ class UsersController < ApplicationController
   end
 
   def show_user_orders
-    @user_orders = Order.includes(:product).where(user_id: current_user)
+    @user_orders = Order.joins(:product).where(user_id: current_user)
   
-    logger.debug "USER'S ORDERS:  #{@user_orders}"
+    logger.debug "USER'S ORDERS:  #{@user_orders.to_json}"
     respond_to do |format| 
       format.html { render :show_user_orders }
       format.json { render json: @user_orders }
