@@ -13,3 +13,8 @@ Product.create(name: "Black bike", description: "Quisque molestie urna id nisl m
 #Product.create(name: "White bike", description: "Quisque molestie urna id nisl mollis, sit amet feugiat quam consectetur. Nullam sit amet mauris mauris. Curabitur aliquam suscipit urna, ut elementum massa tempus vitae. Integer commodo justo non sem scelerisque, quis elementum ipsum feugiat. Aliquam erat volutpat.", image_url: "bike4.jpg", price: "45.99");
 #Product.create(name: "Bike", description: "Quisque molestie urna id nisl mollis, sit amet feugiat quam consectetur. Nullam sit amet mauris mauris. Curabitur aliquam suscipit urna, ut elementum massa tempus vitae. Integer commodo justo non sem scelerisque, quis elementum ipsum feugiat. Aliquam erat volutpat.", image_url: "bike11.jpg", price: "45.99");
 
+OrderStatus.delete_all
+OrderStatus.create! id: 1, name: "In Progress"
+OrderStatus.create! id: 2, name: "Placed"
+OrderStatus.create! id: 3, name: "Shipped"
+OrderStatus.create! id: 4, name: "Cancelled"
