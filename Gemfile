@@ -56,6 +56,9 @@ gem 'friendly_id', '~> 5.1.0'
 # Use redis for caching
 gem 'redis-rails'
 
+# Use for omni authentication
+gem 'omniauth-facebook'
+
 # Use Gravatar for the logged user's emails
 #gem 'gravtastic'
 
