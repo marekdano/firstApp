@@ -240,7 +240,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook, Rails.application.secrets.facebook_api_id, Rails.application.secrets.facebook_api_secret,
-                  callback_url: 'http://localhost:3000/auth/facebook/callback' 
+                  callback_url: Rails.application.secrets.facebook_callback_url
   
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
