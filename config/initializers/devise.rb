@@ -241,7 +241,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   #config.omniauth :facebook, Rails.application.secrets.FACEBOOK_API_ID, Rails.application.secrets.FACEBOOK_API_SECRET,
   #                callback_url: Rails.application.secrets.FACEBOOK_CALLBACK_URL
-  config.omniauth :facebook, ENV['FACEBOOK_API_ID'], ENV['FACEBOOK_API_SECRET'], scope: 'email', info_fields: 'email,name',
+  config.omniauth :facebook, ENV['FACEBOOK_API_ID'], ENV['FACEBOOK_API_SECRET'], scope: 'email,public_profile', info_fields: 'email,first_name,last_name',
                   callback_url: ENV['FACEBOOK_CALLBACK_URL']
 
   # ==> Warden configuration
