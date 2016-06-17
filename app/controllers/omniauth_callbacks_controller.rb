@@ -7,6 +7,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     puts @user.first_name
     puts @user.last_name
     puts @user.email
+    puts @user.errors.to_a
     
     if @user.persisted?
       sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
