@@ -4,7 +4,9 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     # The method below is implemented the model (e.g. app/models/user.rb)
     @user = User.from_omniauth(request.env["omniauth.auth"])
-    puts @user
+    puts @user.first_name
+    puts @user.last_name
+    puts @user.email
     
     if @user.persisted?
       sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
