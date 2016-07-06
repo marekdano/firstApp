@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '5.0.0'
 # Use Bootstrap for UI
 #gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets
@@ -101,7 +101,8 @@ group :development, :test do
   gem 'guard-rspec', require: false
 
   # Use Spork speeds up tests
-  gem 'spork-rails'
+  # Gem not supported in Rails 5
+  #gem 'spork-rails'
 
   # Use gem to talk guard and spork each other
   gem 'guard-spork'

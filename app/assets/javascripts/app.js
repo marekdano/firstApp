@@ -8,7 +8,7 @@ var app = angular.module('shop', ['ngResource']);
 * Since then the ng-app directives can be removed 
 * from the html tag.
 */
-$(document).on('ready page:load', function() {
+$(document).on('turbolinks:load', function() {
   angular.bootstrap(document.body, ['shop'])
 });
 
