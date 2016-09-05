@@ -106,6 +106,8 @@ group :development, :test do
 
   # Use gem to talk guard and spork each other
   gem 'guard-spork'
+
+  gem 'rails-controller-testing'
 end
 
 group :production do

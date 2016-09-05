@@ -4,7 +4,7 @@ describe "Delete a product" do
   before do
     create_products
     login_user
-    Capybara.current_driver = :selenium
+    Capybara.default_driver = :selenium
   end
 
   it "when No comments and orders" do

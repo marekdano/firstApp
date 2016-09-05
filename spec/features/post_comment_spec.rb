@@ -4,7 +4,7 @@ describe "submit a message" do
   before do
     create_products
     login_user
-    Capybara.current_driver = :selenium
+    Capybara.default_driver = :selenium
     visit "/products/bike"
   end
   
